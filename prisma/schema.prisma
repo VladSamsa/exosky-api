@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Exoplanet {
+  id           Int      @id @default(autoincrement())
+  pl_name      String
+  hostname     String
+  sy_snum      Int
+  sy_pnum      Int
+  discoverymethod String
+  disc_year    Int
+  disc_facility String?
+  pl_orbper    Float?
+  pl_orbsmax   Float?
+  pl_rade      Float?
+  pl_bmasse    Float?
+  st_spectype  String?
+  st_teff      Float?
+  st_rad       Float?
+  st_mass      Float?
+  sy_dist      Float?
+  sy_vmag      Float?
+  sy_kmag      Float?
+  sy_gaiamag   Float?
+}
